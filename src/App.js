@@ -1,8 +1,23 @@
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import Catalog from "./pages/Catalog";
+import Checkout from "./pages/Checkout";
+import Home from "./pages/Home";
+
 function App() {
   return (
-    <div className="App bg-blue-500/30">
-      <h1 className="text-4xl text-red-500">Hello World</h1>
-    </div>
+    <Router>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/catalog" element={<Catalog />} />
+        <Route path="/checkout" element={<Checkout />} />
+        <Route path="*" element={<Navigate to="/" />} />
+      </Routes>
+    </Router>
   );
 }
 
